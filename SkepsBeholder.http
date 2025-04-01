@@ -1,0 +1,6 @@
+@SkepsBeholder_HostAddress = http://localhost:5206
+
+GET {{SkepsBeholder_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
