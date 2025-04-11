@@ -27,14 +27,7 @@ namespace SkepsBeholder.Controllers
         [HttpPost("webhook")]
         public async Task<IActionResult> Webhook([FromBody]Log log)
         {
-            //_logger.LogInformation(log.Owner.Name);
-            _ = _blipSender.SendContactAsync("estacioprd1", JsonSerializer.Serialize(log)).ContinueWith(t =>
-            {
-                if (t.Exception != null)
-                {
-                    _logger.LogError(t.Exception, "Erro ao enviar contato.");
-                }
-            }, TaskContinuationOptions.OnlyOnFaulted);
+            _logger.LogInformation(log.Owner.Name);
 
             if (log.Error != null)
             {
